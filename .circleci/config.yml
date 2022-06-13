@@ -28,7 +28,7 @@ jobs:
       RAILS_ENV: test
     working_directory: ~/rails-docker-sakaishi/src
     steps:
-      - checkout
+      - checkout:
           path: ~/rails-docker-sakaishi
       - ruby/install-deps
       - run:
@@ -44,6 +44,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - test:
           requires:
             - build
